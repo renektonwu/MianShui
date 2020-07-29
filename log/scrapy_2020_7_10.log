@@ -1,0 +1,54 @@
+2020-07-10 19:06:05 [scrapy.utils.log] INFO: Scrapy 2.1.0 started (bot: CDFSanya)
+2020-07-10 19:06:05 [scrapy.utils.log] INFO: Versions: lxml 4.5.0.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.6.0, w3lib 1.21.0, Twisted 20.3.0, Python 3.7.7 (default, May  6 2020, 11:45:54) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.9.2, Platform Windows-10-10.0.18362-SP0
+2020-07-10 19:06:05 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'CDFSanya',
+ 'CONCURRENT_REQUESTS': 100,
+ 'DOWNLOAD_DELAY': 2,
+ 'LOG_FILE': 'log/scrapy_2020_7_10.log',
+ 'LOG_LEVEL': 'INFO',
+ 'NEWSPIDER_MODULE': 'CDFSanya.spiders',
+ 'SPIDER_MODULES': ['CDFSanya.spiders']}
+2020-07-10 19:06:05 [scrapy.extensions.telnet] INFO: Telnet Password: 3e12864b57ab5f2b
+2020-07-10 19:06:05 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2020-07-10 19:06:05 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-07-10 19:06:05 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-07-10 19:06:05 [scrapy.middleware] INFO: Enabled item pipelines:
+['CDFSanya.pipelines.MysqlTwistedPipline',
+ 'CDFSanya.pipelines.CdfsanyaPipeline']
+2020-07-10 19:06:05 [scrapy.core.engine] INFO: Spider opened
+2020-07-10 19:06:05 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-07-10 19:06:05 [py.warnings] WARNING: D:\ProgramData\Anaconda3\envs\myspider_py37\lib\site-packages\scrapy\spidermiddlewares\offsite.py:65: URLWarning: allowed_domains accepts only domains, not URLs. Ignoring URL entry http://www.cdfgsanya.com in allowed_domains.
+  warnings.warn(message, URLWarning)
+
+2020-07-10 19:06:05 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2020-07-10 19:06:05 [scrapy.utils.signal] ERROR: Error caught on signal handler: <bound method MemoryUsage.engine_started of <scrapy.extensions.memusage.MemoryUsage object at 0x0000021BB21082C8>>
+Traceback (most recent call last):
+  File "D:\ProgramData\Anaconda3\envs\myspider_py37\lib\site-packages\scrapy\utils\defer.py", line 161, in maybeDeferred_coro
+    result = f(*args, **kw)
+  File "D:\ProgramData\Anaconda3\envs\myspider_py37\lib\site-packages\pydispatch\robustapply.py", line 55, in robustApply
+    return receiver(*arguments, **named)
+  File "D:\ProgramData\Anaconda3\envs\myspider_py37\lib\site-packages\scrapy\extensions\memusage.py", line 56, in engine_started
+    self.crawler.stats.set_value('memusage/startup', self.get_virtual_size())
+  File "D:\ProgramData\Anaconda3\envs\myspider_py37\lib\site-packages\scrapy\extensions\memusage.py", line 49, in get_virtual_size
+    size = self.resource.getrusage(self.resource.RUSAGE_SELF).ru_maxrss
+AttributeError: module 'resource' has no attribute 'getrusage'
